@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,73 +7,58 @@
   <meta name="robots" content="index,follow" />
   <title>Lisa M. Anderson, PMHNP-BC | Psychiatric Nurse Practitioner | Swansea, MA</title>
 
-  <!-- Social -->
-  <meta property="og:title" content="Lisa M. Anderson, PMHNP-BC" />
-  <meta property="og:description" content="Compassionate psychiatric medication management in Swansea, MA. Accepting new patients. Schedule online or call." />
-  <meta property="og:type" content="website" />
-
   <style>
     :root{
-      --bg1:#f7fbf8;
-      --bg2:#ffffff;
-      --ink:#1f2a24;
-      --muted:#526157;
-
+      --ink:#17242b;
+      --muted:#4d626e;
       --card:#ffffff;
-      --border: rgba(34, 56, 44, 0.12);
-      --shadow: 0 16px 46px rgba(31,42,36,0.10);
-
+      --border: rgba(18, 38, 52, 0.10);
+      --shadow: 0 16px 46px rgba(18, 38, 52, 0.12);
       --accent:#2f7d63;
       --accent2:#77bfa3;
-      --warm:#f2c9a0;
-
       --max: 1120px;
       --radius: 18px;
     }
 
     *{ box-sizing:border-box; }
-    html{ scroll-behavior: smooth; }
-    html,body{
-      margin:0; padding:0;
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color: var(--ink);
+
+      /* SKY BACKGROUND */
       background:
-        radial-gradient(900px 600px at 15% 10%, rgba(119,191,163,0.20), transparent 60%),
-        radial-gradient(900px 600px at 85% 20%, rgba(242,201,160,0.20), transparent 55%),
-        linear-gradient(180deg, var(--bg1), var(--bg2));
+        radial-gradient(900px 600px at 15% 12%, rgba(119,191,163,0.18), transparent 60%),
+        radial-gradient(900px 600px at 85% 18%, rgba(255,255,255,0.55), transparent 55%),
+        linear-gradient(180deg, #d9f0ff 0%, #eef9ff 45%, #ffffff 100%);
+
+      /* CLOUD OVERLAY PATTERN (SVG) */
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='360' viewBox='0 0 900 360'%3E%3Cg fill='white' fill-opacity='0.35'%3E%3Cpath d='M120 210c-22 0-40-14-40-32 0-16 13-29 31-32 6-22 28-38 54-38 28 0 52 18 56 43 18 3 32 16 32 32 0 19-19 34-43 34H120z'/%3E%3Cpath d='M520 140c-26 0-46-16-46-36 0-18 15-33 36-36 7-25 32-44 61-44 32 0 59 22 63 50 20 3 36 18 36 36 0 21-22 38-50 38H520z'/%3E%3Cpath d='M240 90c-18 0-32-11-32-25 0-12 10-22 24-25 5-17 22-30 42-30 22 0 40 14 44 33 14 3 26 13 26 25 0 15-15 27-34 27H240z'/%3E%3Cpath d='M700 250c-22 0-40-14-40-32 0-16 13-29 31-32 6-22 28-38 54-38 28 0 52 18 56 43 18 3 32 16 32 32 0 19-19 34-43 34H700z'/%3E%3C/g%3E%3C/svg%3E"),
+        radial-gradient(900px 600px at 15% 12%, rgba(119,191,163,0.18), transparent 60%),
+        radial-gradient(900px 600px at 85% 18%, rgba(255,255,255,0.55), transparent 55%),
+        linear-gradient(180deg, #d9f0ff 0%, #eef9ff 45%, #ffffff 100%);
+
+      background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+      background-size: 900px 360px, auto, auto, auto;
     }
 
     a{ color: inherit; text-decoration:none; }
-    a:focus-visible, button:focus-visible{
-      outline: 3px solid rgba(47,125,99,0.35);
-      outline-offset: 3px;
-      border-radius: 12px;
-    }
-
-    .skip{
-      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
-    }
-    .skip:focus{
-      position:fixed; left:16px; top:16px; width:auto; height:auto; padding:10px 12px;
-      background:#fff; border:1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow);
-      z-index: 1000;
-    }
-
     .container{ max-width: var(--max); margin: 0 auto; padding: 22px 18px 86px; }
 
     header{
       position: sticky; top: 0; z-index: 40;
-      background: rgba(247,251,248,0.78);
+      background: rgba(238, 249, 255, 0.78);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(34,56,44,0.10);
+      border-bottom: 1px solid rgba(18, 38, 52, 0.08);
     }
     .header-inner{
       max-width: var(--max); margin: 0 auto; padding: 14px 18px;
       display:flex; align-items:center; justify-content:space-between; gap:14px;
     }
-    .brand{ display:flex; flex-direction:column; gap:2px; }
     .brand h1{ margin:0; font-size:18px; letter-spacing:0.2px; }
-    .brand p{ margin:0; font-size:13px; color: var(--muted); }
+    .brand p{ margin:2px 0 0; font-size:13px; color: var(--muted); }
 
     nav{ display:flex; flex-wrap:wrap; gap:10px; }
     nav a{
@@ -82,11 +66,7 @@
       padding: 8px 10px; border-radius: 999px;
       border: 1px solid transparent;
     }
-    nav a:hover{
-      border-color: rgba(34,56,44,0.14);
-      color: var(--ink);
-      background: rgba(255,255,255,0.70);
-    }
+    nav a:hover{ border-color: rgba(18,38,52,0.12); background: rgba(255,255,255,0.65); color: var(--ink); }
 
     .card{
       background: var(--card);
@@ -97,27 +77,22 @@
 
     .hero{
       display:grid;
-      grid-template-columns: 1.12fr 0.88fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 16px;
       margin-top: 18px;
     }
     .hero-left{ padding: 22px; }
-    .hero-left h2{ margin:0 0 10px; font-size: 38px; line-height: 1.06; letter-spacing: -0.3px; }
-    .hero-left .sub{
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.7;
-    }
+    .hero-left h2{ margin:0 0 10px; font-size: 38px; line-height:1.06; }
+    .sub{ margin:0 0 14px; color: var(--muted); line-height: 1.7; }
 
     .soft-badge{
       display:inline-flex; align-items:center; gap:10px;
       padding: 10px 12px;
       border-radius: 999px;
       border: 1px solid rgba(47,125,99,0.20);
-      background: rgba(47,125,99,0.08);
-      color: #1e3a2f;
-      font-weight: 700;
+      background: rgba(47,125,99,0.09);
+      color: #174035;
+      font-weight: 800;
       font-size: 13px;
       margin: 6px 0 14px;
     }
@@ -127,178 +102,91 @@
       box-shadow: 0 0 0 4px rgba(47,125,99,0.15);
     }
 
-    .pillrow{ display:flex; flex-wrap:wrap; gap:10px; margin: 14px 0 18px; }
-    .pill{
-      font-size: 13px;
-      color: #214338;
-      background: rgba(119,191,163,0.16);
-      border: 1px solid rgba(119,191,163,0.35);
-      padding: 8px 10px;
-      border-radius: 999px;
-    }
-
     .ctas{ display:flex; flex-wrap:wrap; gap:12px; margin-top: 10px; }
     .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      font-weight: 800;
-      border: 1px solid rgba(34,56,44,0.14);
-      cursor: pointer;
-      background: #fff;
-      transition: transform .12s ease, filter .12s ease, background .12s ease;
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 12px 14px; border-radius: 14px;
+      font-weight: 900;
+      border: 1px solid rgba(18,38,52,0.14);
+      background: rgba(255,255,255,0.92);
     }
-    .btn:hover{ transform: translateY(-1px); }
     .btn-primary{
       border: none;
+      color: #fff;
       background: linear-gradient(90deg, rgba(47,125,99,0.96), rgba(119,191,163,0.92));
-      color: #ffffff;
       box-shadow: 0 12px 26px rgba(47,125,99,0.18);
     }
-    .btn-primary:hover{ filter: brightness(1.03); }
-    .btn-secondary{
-      background: rgba(255,255,255,0.92);
-      color: var(--ink);
-    }
-    .btn-secondary:hover{ background: rgba(255,255,255,1); }
 
     .hero-right{ padding: 18px; display:grid; gap:12px; }
     .info{
       padding: 16px;
       border-radius: 16px;
-      border: 1px solid rgba(34,56,44,0.12);
-      background: linear-gradient(180deg, rgba(255,255,255,1), rgba(247,251,248,0.70));
+      border: 1px solid rgba(18,38,52,0.10);
+      background: linear-gradient(180deg, rgba(255,255,255,1), rgba(238,249,255,0.70));
     }
-    .info h3{ margin: 0 0 8px; font-size: 16px; }
-    .info p{ margin: 6px 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
-    .small{ font-size: 12px; color: var(--muted); }
-
     .profile-wrap{ display:flex; align-items:center; gap:12px; }
     .avatar{
-      width: 84px; height: 84px; border-radius: 999px;
+      width: 92px; height: 92px; border-radius: 999px;
       object-fit: cover;
-      border: 3px solid rgba(47,125,99,0.20);
-      box-shadow: 0 10px 24px rgba(31,42,36,0.12);
+      border: 3px solid rgba(47,125,99,0.18);
+      box-shadow: 0 10px 24px rgba(18,38,52,0.14);
       background: #fff;
     }
-    .nameblock{ display:flex; flex-direction:column; gap:2px; }
-    .nameblock .name{ font-weight: 900; }
-    .nameblock .cred{ color: var(--muted); font-size: 13px; }
+    .name{ font-weight: 950; }
+    .cred{ color: var(--muted); font-size: 13px; margin-top: 2px; }
 
     section{ margin-top: 22px; }
     .section-title{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin: 20px 0 10px; }
     .section-title h3{ margin:0; font-size: 22px; }
     .section-title p{ margin:0; color: var(--muted); }
 
-    .grid3{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    .grid2{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
     .box{ padding: 18px; }
-    .box h4{ margin:0 0 8px; font-size: 16px; }
-    .box p{ margin:0; color: var(--muted); line-height: 1.7; font-size: 14px; }
-    ul{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
-    li{ margin: 6px 0; }
-
     .notice{
       margin-top: 12px;
       padding: 14px 14px;
       border-radius: 16px;
-      border: 1px solid rgba(242,201,160,0.50);
-      background: rgba(242,201,160,0.22);
-      color: #3a2a1e;
+      border: 1px solid rgba(180,220,255,0.9);
+      background: rgba(255,255,255,0.65);
+      color: #17303a;
       font-size: 13px;
       line-height: 1.6;
     }
 
-    .highlight{
-      margin-top: 14px;
-      padding: 14px 14px;
-      border-radius: 16px;
-      border: 1px solid rgba(47,125,99,0.20);
-      background: rgba(119,191,163,0.12);
-      color: #1e3a2f;
-      font-size: 14px;
-      line-height: 1.6;
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
     }
-
-    .insurance{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
-    .ins{
-      font-size: 13px;
-      color: #234438;
-      background: rgba(119,191,163,0.16);
-      border: 1px solid rgba(119,191,163,0.35);
-      padding: 8px 10px;
-      border-radius: 999px;
-      white-space: nowrap;
+    .photo{
+      overflow:hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(18,38,52,0.10);
+      background: #fff;
+      box-shadow: 0 14px 30px rgba(18,38,52,0.10);
     }
-
-    footer{
-      margin-top: 26px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(34,56,44,0.12);
+    .photo img{
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display:block;
+      transform: scale(1.02);
+    }
+    .caption{
+      padding: 12px 12px 14px;
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.7;
-    }
-    footer a{ text-decoration: underline; }
-
-    /* Mobile bottom bar (fast actions) */
-    .mobile-bar{
-      display:none;
-      position: fixed; left: 0; right: 0; bottom: 0;
-      padding: 10px 12px;
-      background: rgba(255,255,255,0.92);
-      border-top: 1px solid rgba(34,56,44,0.12);
-      backdrop-filter: blur(10px);
-      z-index: 60;
-    }
-    .mobile-bar .row{
-      max-width: var(--max);
-      margin: 0 auto;
-      display:flex; gap: 10px;
-    }
-    .mobile-bar a{
-      flex: 1;
-      text-align:center;
-      padding: 12px 12px;
-      border-radius: 14px;
-      font-weight: 900;
-      border: 1px solid rgba(34,56,44,0.14);
-      background: #fff;
-    }
-    .mobile-bar a.primary{
-      border: none;
-      color: #fff;
-      background: linear-gradient(90deg, rgba(47,125,99,0.96), rgba(119,191,163,0.92));
+      line-height: 1.5;
     }
 
     @media (max-width: 900px){
       header{ position: relative; }
       .hero{ grid-template-columns: 1fr; }
-      .grid3{ grid-template-columns: 1fr; }
-      .grid2{ grid-template-columns: 1fr; }
-      .hero-left h2{ font-size: 30px; }
-      .mobile-bar{ display:block; }
-      .container{ padding-bottom: 120px; }
+      .gallery{ grid-template-columns: 1fr; }
     }
   </style>
-
-  <!-- Clean JSON-LD (valid JSON) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Physician",
-    "name": "Lisa M. Anderson, PMHNP-BC",
-    "description": "Compassionate psychiatric medication management in Swansea, MA. Accepting new patients.",
-    "telephone": "+1-774-260-6861",
-    "areaServed": ["Massachusetts", "New England"],
-    "url": "https://REPLACE-YOUR-DOMAIN.com"
-  }
-  </script>
 </head>
 
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-
   <header>
     <div class="header-inner">
       <div class="brand">
@@ -306,49 +194,27 @@
         <p>Psychiatric Nurse Practitioner • Swansea, MA • Accepting New Patients</p>
       </div>
       <nav aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#reviews-summary">Patient Feedback</a>
-        <a href="#insurance">Insurance</a>
-        <a href="#schedule">Schedule</a>
+        <a href="#patient-feedback">Patient Feedback</a>
+        <a href="#hopeful">Hope & Healing</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="container">
+  <main class="container">
     <div class="hero">
-      <section class="card hero-left" aria-label="Hero">
+      <section class="card hero-left">
         <div class="soft-badge"><span class="dot"></span> Accepting new patients</div>
-
-        <h2>Calm, supportive care—one step at a time.</h2>
+        <h2>A gentle path forward—rooted in clarity and care.</h2>
         <p class="sub">
           If you’ve been feeling overwhelmed, stuck, or simply not like yourself, you don’t have to carry it alone.
           Lisa provides thoughtful psychiatric medication management with a steady, compassionate approach—focused on
           helping you feel more grounded, informed, and supported.
         </p>
 
-        <div class="pillrow" aria-label="Key Focus Areas">
-          <span class="pill">Anxiety</span>
-          <span class="pill">Depression</span>
-          <span class="pill">Mood Support</span>
-          <span class="pill">Medication Management</span>
-          <span class="pill">Adults</span>
-        </div>
-
         <div class="ctas">
-          <a class="btn btn-primary" href="https://www.tebra.com/care/provider/lisa-anderson-pmhnp-1558822296" target="_blank" rel="noopener">
-            Schedule Securely Online
-          </a>
-          <a class="btn btn-secondary" href="tel:+17742606861">
-            Call: (774) 260-6861
-          </a>
-          <a class="btn btn-secondary" href="#services">
-            Explore Services
-          </a>
-        </div>
-
-        <div class="highlight">
-          <strong>What to expect:</strong> a respectful conversation, clear options, and a treatment plan built around your goals.
+          <a class="btn btn-primary" href="https://www.tebra.com/care/provider/lisa-anderson-pmhnp-1558822296" target="_blank" rel="noopener">Schedule Securely Online</a>
+          <a class="btn" href="tel:+17742606861">Call: (774) 260-6861</a>
         </div>
 
         <div class="notice">
@@ -358,212 +224,76 @@
         </div>
       </section>
 
-      <aside class="card hero-right" aria-label="Quick Info">
+      <aside class="card hero-right">
         <div class="info">
           <div class="profile-wrap">
-            <img class="avatar" src="Lisa Profile Pic.jpeg" alt="Lisa M. Anderson, PMHNP-BC" />
-            <div class="nameblock">
+            <!-- THIS MATCHES YOUR UPLOADED FILENAME -->
+            <img class="avatar" src="Lisa%20Profile%20Pic.jpeg" alt="Lisa M. Anderson, PMHNP-BC" />
+            <div>
               <div class="name">Lisa M. Anderson</div>
               <div class="cred">PMHNP-BC • Psychiatric Nurse Practitioner</div>
             </div>
           </div>
         </div>
 
-        <div class="info">
-          <h3>Get Started</h3>
-          <p><strong>1)</strong> Schedule online or call.</p>
-          <p><strong>2)</strong> Attend your initial appointment.</p>
-          <p><strong>3)</strong> Leave with a clear plan and next steps.</p>
+        <div class="info" id="contact">
+          <h3 style="margin:0 0 8px;">Contact</h3>
+          <p style="margin:6px 0; color: var(--muted); line-height:1.6;">
+            <strong>(774) 260-6861</strong><br>
+            25 Market St Ste 14, Swansea, MA 02777
+          </p>
           <div class="ctas" style="margin-top:10px;">
-            <a class="btn btn-primary" href="https://www.tebra.com/care/provider/lisa-anderson-pmhnp-1558822296" target="_blank" rel="noopener">Book on Tebra</a>
-          </div>
-          <p class="small">Scheduling is handled through a secure third-party healthcare platform.</p>
-        </div>
-
-        <div class="info">
-          <h3>Phone</h3>
-          <p><strong>(774) 260-6861</strong></p>
-          <p class="small">Please avoid leaving detailed medical information in voicemail.</p>
-        </div>
-
-        <div class="info">
-          <h3>Office</h3>
-          <p><strong>Swansea, MA</strong></p>
-          <p class="small">25 Market St Ste 14, Swansea, MA 02777</p>
-          <div class="ctas" style="margin-top:10px;">
-            <a class="btn btn-secondary" target="_blank" rel="noopener"
-               href="https://www.google.com/maps?q=25+Market+St+Ste+14,+Swansea,+MA+02777">
-              Open in Maps
-            </a>
+            <a class="btn" href="https://www.google.com/maps?q=25+Market+St+Ste+14,+Swansea,+MA+02777" target="_blank" rel="noopener">Open in Maps</a>
           </div>
         </div>
       </aside>
     </div>
 
-    <section id="reviews-summary">
+    <section id="patient-feedback">
       <div class="section-title">
         <h3>What Patients Often Appreciate</h3>
         <p>Common themes from public feedback.</p>
       </div>
-
       <div class="card box">
-        <p>Across public review platforms, patients often describe Lisa as:</p>
-        <ul>
-          <li><strong>Warm and compassionate</strong>, creating a calm space to talk.</li>
-          <li><strong>Attentive and responsive</strong>—someone who listens and follows through.</li>
-          <li><strong>Clear and practical</strong> about options and next steps.</li>
-          <li><strong>Collaborative</strong>, aligning treatment with patient goals when clinically appropriate.</li>
+        <ul style="margin:0; padding-left:18px; color: var(--muted); line-height:1.7;">
+          <li><strong>Warm, compassionate care</strong> that helps people feel heard.</li>
+          <li><strong>Thoughtful listening</strong> and a calm, respectful presence.</li>
+          <li><strong>Clear next steps</strong> and practical treatment planning.</li>
+          <li><strong>Collaborative approach</strong> aligned with patient goals when clinically appropriate.</li>
         </ul>
-        <div class="notice" style="margin-top:14px;">
-          Reviews are hosted on third-party sites and are not reproduced here. You can read full reviews on Healthgrades.
-        </div>
-        <div class="ctas" style="margin-top:12px;">
-          <a class="btn btn-secondary" href="https://www.healthgrades.com/providers/lisa-anderson-tudkjfr797" target="_blank" rel="noopener">
-            Read Reviews on Healthgrades
-          </a>
-          <a class="btn btn-secondary" href="https://www.psychologytoday.com/us/psychiatrists/lisa-m-anderson-swansea-ma/701895" target="_blank" rel="noopener">
-            Psychology Today Profile
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="section-title">
-        <h3>Services</h3>
-        <p>Practical care with warmth and clarity.</p>
-      </div>
-
-      <div class="grid3">
-        <div class="card box">
-          <h4>Medication Management</h4>
-          <p>Comprehensive evaluation, ongoing follow-ups, and thoughtful adjustments when needed.</p>
-          <ul>
-            <li>Initial assessment</li>
-            <li>Follow-up visits</li>
-            <li>Collaborative treatment planning</li>
-          </ul>
-        </div>
-
-        <div class="card box">
-          <h4>Support for Common Concerns</h4>
-          <p>Evidence-based care for a range of mental health concerns.</p>
-          <ul>
-            <li>Anxiety</li>
-            <li>Depression</li>
-            <li>Mood-related concerns</li>
-            <li>Stress and life transitions</li>
-          </ul>
-        </div>
-
-        <div class="card box">
-          <h4>Coordination of Care</h4>
-          <p>When appropriate (and with your consent), coordination with your therapist and other clinicians.</p>
-          <ul>
-            <li>Collaboration with your therapist</li>
-            <li>Communication with PCPs (with consent)</li>
-            <li>Continuity and clarity</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="insurance">
-      <div class="section-title">
-        <h3>Insurance Accepted</h3>
-        <p>Please verify coverage with your insurer.</p>
-      </div>
-
-      <div class="card box">
-        <p>Lisa accepts the following insurance plans (coverage can vary by policy):</p>
-
-        <div class="insurance" aria-label="Insurance plans">
-          <span class="ins">Aetna</span>
-          <span class="ins">Anthem</span>
-          <span class="ins">Blue Cross</span>
-          <span class="ins">Blue Shield</span>
-          <span class="ins">BlueCross and BlueShield</span>
-          <span class="ins">Cigna and Evernorth</span>
-          <span class="ins">Harvard Pilgrim</span>
-          <span class="ins">Mass General Brigham Health Plan</span>
-          <span class="ins">Optum</span>
-          <span class="ins">Oscar Health</span>
-          <span class="ins">Tufts</span>
-          <span class="ins">UnitedHealthcare (UHC | UBH)</span>
-        </div>
-
-        <div class="notice" style="margin-top:14px;">
-          Insurance participation can change. Call <a href="tel:+17742606861" style="text-decoration:underline;">(774) 260-6861</a> with questions.
-        </div>
-      </div>
-    </section>
-
-    <section id="schedule">
-      <div class="section-title">
-        <h3>Schedule</h3>
-        <p>Secure booking via Tebra.</p>
-      </div>
-
-      <div class="card box">
-        <p>To protect your privacy, appointment requests are handled through a secure third-party healthcare platform.</p>
-        <div class="ctas">
-          <a class="btn btn-primary" href="https://www.tebra.com/care/provider/lisa-anderson-pmhnp-1558822296" target="_blank" rel="noopener">
-            Schedule Securely Online
-          </a>
-          <a class="btn btn-secondary" href="tel:+17742606861">Call: (774) 260-6861</a>
-        </div>
         <div class="notice">
-          If you are experiencing a mental health emergency, call <strong>911</strong> or go to the nearest emergency room.
-          You can also call or text <strong>988</strong> (U.S. Suicide & Crisis Lifeline).
+          Reviews are hosted on third-party sites and are not reproduced here.
+          <a href="https://www.healthgrades.com/providers/lisa-anderson-tudkjfr797" target="_blank" rel="noopener" style="text-decoration:underline;">Read reviews on Healthgrades</a>.
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="hopeful">
       <div class="section-title">
-        <h3>Contact</h3>
-        <p>No online form to protect your privacy.</p>
+        <h3>Hope & Healing</h3>
+        <p>Support for mind + wellbeing in a calm, optimistic space.</p>
       </div>
 
-      <div class="grid2">
-        <div class="card box">
-          <h4>Phone</h4>
-          <p style="margin-top:8px;"><strong><a href="tel:+17742606861">(774) 260-6861</a></strong></p>
-          <p class="small">Please avoid sending sensitive medical details via voicemail or text.</p>
+      <div class="gallery">
+        <div class="photo">
+          <img alt="Sunrise over calm water"
+               src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80">
+          <div class="caption">A hopeful start — creating steadier mornings and clearer days.</div>
         </div>
 
-        <div class="card box">
-          <h4>Office Address</h4>
-          <p style="margin-top:8px;">
-            25 Market St Ste 14<br />
-            Swansea, MA 02777
-          </p>
-          <p class="small">Lisa rents clinical space in this location; this website represents her independent practice.</p>
+        <div class="photo">
+          <img alt="Soft clouds in a blue sky"
+               src="https://images.unsplash.com/photo-1501472312651-726afe119ff1?auto=format&fit=crop&w=1200&q=80">
+          <div class="caption">Room to breathe — slowing down the noise and finding calm.</div>
+        </div>
+
+        <div class="photo">
+          <img alt="Nature path with sunlight"
+               src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80">
+          <div class="caption">Step by step — practical support that respects your pace.</div>
         </div>
       </div>
     </section>
-
-    <footer aria-label="Legal and Privacy">
-      <p><strong>Website Privacy & HIPAA Notice</strong></p>
-      <p>
-        This website is for general informational purposes only and does not collect or store protected health information (PHI).
-        Please do not submit private medical information through this website. Scheduling is completed through a secure third-party platform.
-      </p>
-      <p><strong>No Medical Advice:</strong> The content on this site is not a substitute for professional medical advice, diagnosis, or treatment.</p>
-      <p><strong>Emergencies:</strong> Call 911 or go to the nearest emergency room. You can also call or text <strong>988</strong> in the U.S.</p>
-      <p>© <span id="year"></span> Lisa M. Anderson, PMHNP-BC. All rights reserved.</p>
-    </footer>
   </main>
-
-  <div class="mobile-bar" aria-label="Quick actions">
-    <div class="row">
-      <a class="primary" href="https://www.tebra.com/care/provider/lisa-anderson-pmhnp-1558822296" target="_blank" rel="noopener">Schedule</a>
-      <a href="tel:+17742606861">Call</a>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
