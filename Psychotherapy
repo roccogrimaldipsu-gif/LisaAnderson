@@ -131,6 +131,7 @@
       border: 1px solid rgba(20,40,55,0.14);
       background: rgba(255,255,255,0.92);
       transition: transform .12s ease, filter .12s ease;
+      cursor: pointer;
     }
     .btn:hover{ transform: translateY(-1px); }
     .btn.primary{
@@ -167,6 +168,7 @@
       background:#fff;
     }
     .cred{ font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .mini{ font-size: 12px; color: var(--muted); line-height: 1.55; margin-top: 6px; }
 
     section{ margin-top: 22px; }
     .section-title{
@@ -190,7 +192,7 @@
       padding: 18px;
       border-radius: 18px;
       border: 1px solid rgba(20,40,55,0.12);
-      background: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.88);
     }
     .quote .mark{
       font-size: 44px;
@@ -246,7 +248,7 @@
       background: rgba(255,255,255,0.80);
       color: #1d2a33;
       white-space: nowrap;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .review-grid{
@@ -266,17 +268,46 @@
       margin-bottom: 10px;
     }
     .review-card .anon{
-      font-weight: 900;
+      font-weight: 950;
       color: #1b2d36;
     }
-    .review-card .date{
-      font-size: 12px; color: var(--muted);
+    .review-card .meta2{
+      display:flex; align-items:center; gap: 8px;
+      justify-content:flex-end;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .tag{
+      font-size: 12px;
+      padding: 6px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(20,40,55,0.12);
+      background: rgba(238,249,255,0.9);
+      color: #1b2d36;
+      font-weight: 800;
+      white-space: nowrap;
     }
     .review-card .text{
       margin:0;
       color: #22313a;
       line-height: 1.75;
     }
+
+    .summary-grid{
+      margin-top: 14px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .summary-item{
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(20,40,55,0.12);
+      background: rgba(255,255,255,0.92);
+    }
+    .summary-item h4{ margin:0 0 8px; font-size: 15px; }
+    .summary-item p{ margin:0; color: var(--muted); line-height: 1.7; }
 
     .insurance{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
     .ins{
@@ -334,6 +365,7 @@
       .grid2{ grid-template-columns: 1fr; }
       .grid3{ grid-template-columns: 1fr; }
       .review-grid{ grid-template-columns: 1fr; }
+      .summary-grid{ grid-template-columns: 1fr; }
       h1{ font-size: 30px; }
       .mobile-bar{ display:block; }
     }
@@ -357,11 +389,10 @@
     <div class="header-inner">
       <div class="brand">
         <div class="name">Lisa M Anderson, PMHNP-BC</div>
-        <div class="sub">Online psychiatric medication management • Accepting new patients</div>
+        <div class="sub">Accepting new patients • Virtual appointments</div>
       </div>
       <nav aria-label="Primary">
         <a href="#about">About</a>
-        <a href="#practice">Practice</a>
         <a href="#reviews">Reviews</a>
         <a href="#insurance">Insurance</a>
         <a href="#schedule">Schedule</a>
@@ -377,8 +408,8 @@
         <h1>Evidence-based care with a compassionate, collaborative approach.</h1>
         <p class="lede">
           Many people seek mental health care when they’re dealing with anxiety, depression, trouble focusing, sleep difficulties,
-          obsessive thoughts/behaviors, mood changes, or challenges at school or work. The goal is the same: feel steadier, function better,
-          and build a plan that fits your life. :contentReference[oaicite:1]{index=1}
+          obsessive thoughts/behaviors, mood changes, or challenges at school or work. The goal is the same: feel steadier,
+          function better, and build a plan that fits your life.
         </p>
 
         <div class="pillrow" aria-label="Specialties">
@@ -401,8 +432,8 @@
 
         <div class="notice">
           <strong>Privacy note:</strong> Please do not submit private medical information through this website.
-          For scheduling, use the secure booking link or call.
-          If you are in immediate danger or crisis, call <strong>911</strong> or dial/text <strong>988</strong>.
+          For scheduling, use the secure booking link or call. If you are in immediate danger or crisis, call
+          <strong>911</strong> or dial/text <strong>988</strong>.
         </div>
       </section>
 
@@ -413,7 +444,7 @@
             <div>
               <div style="font-weight:950;">Lisa M Anderson</div>
               <div class="cred">Psychiatric Nurse Practitioner • MSN, PMHNP-BC</div>
-              <div class="cred">Licensed in MA & RI • All appointments virtual :contentReference[oaicite:2]{index=2}</div>
+              <div class="mini">Licensed in MA & RI • All appointments virtual</div>
             </div>
           </div>
         </div>
@@ -431,13 +462,15 @@
 
         <div class="info">
           <h3 style="margin:0 0 8px;">Practice at a Glance</h3>
-          <p><strong>Online only</strong> • Swansea, MA 02777 :contentReference[oaicite:3]{index=3}</p>
-          <p><strong>Phone:</strong> (508) 538-3748 :contentReference[oaicite:4]{index=4}</p>
+          <p style="margin:6px 0; color:var(--muted); line-height:1.6;">
+            <strong>Online only</strong> • Swansea, MA 02777<br/>
+            <strong>Phone:</strong> (508) 538-3748
+          </p>
         </div>
       </aside>
     </div>
 
-    <!-- FEATURED QUOTE (exact, as requested) -->
+    <!-- FEATURED QUOTE (exact) -->
     <section aria-label="Featured Quote">
       <div class="quote">
         <div class="mark">“</div>
@@ -446,232 +479,207 @@
         </blockquote>
         <div class="sig">
           <img src="lisapic.jpg" alt="" style="width:34px;height:34px;border-radius:999px;object-fit:cover;border:2px solid rgba(47,125,99,0.18);" />
-          <div><strong>Lisa M Anderson</strong> • Psychiatric Nurse Practitioner (PMHNP-BC)</div>
+          <div><strong>Lisa M Anderson</strong> • Psychiatric Nurse Practitioner</div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT (Original design, content based on allowed sources) -->
+    <!-- ABOUT -->
     <section id="about">
       <div class="section-title">
         <h2>About Lisa</h2>
-        <p>Clinical, collaborative, and grounded in respect.</p>
+        <p>Experienced care focused on clarity, safety, and support.</p>
       </div>
 
       <div class="grid2">
         <div class="card box">
-          <h3>Lengthier Bio</h3>
+          <h3>Bio</h3>
           <p>
-            Lisa M Anderson is a board-certified Psychiatric Mental Health Nurse Practitioner with over 36 years of nursing experience
-            and several years running her own private practice. She supports children, adolescents, and adults, and focuses on psychiatric
-            medication management with a careful, evidence-based approach. :contentReference[oaicite:5]{index=5}
+            Lisa M Anderson is a board-certified Psychiatric Mental Health Nurse Practitioner. She provides psychiatric medication management
+            via telehealth for children, adolescents, and adults. Her goal is to help you feel steadier, understand your options, and develop a
+            treatment plan you feel confident in.
           </p>
           <p style="margin-top:10px;">
-            She tailors medication plans to each person’s needs and preferences, prioritizing safety, effectiveness, and minimizing side effects.
-            For many patients, the goal is not simply “a prescription,” but clarity, stability, and a plan that fits real life. :contentReference[oaicite:6]{index=6}
+            Patients often look for a provider who listens, explains recommendations clearly, and treats them with respect. Lisa’s approach emphasizes
+            collaborative decision-making, strong communication, and thoughtful follow-up—so you’re not guessing about next steps.
           </p>
           <p style="margin-top:10px;">
-            Lisa brings decades of nursing expertise and dedicated psychiatric experience, treating concerns such as ADHD, depression, anxiety,
-            eating disorders, mood disorders, PTSD, and OCD. She provides care via telemedicine to make access simpler while maintaining
-            a personalized, supportive approach. :contentReference[oaicite:7]{index=7}
+            When clinically appropriate, evaluations may include additional referrals or coordination with other clinicians to support the best overall plan.
           </p>
         </div>
 
         <div class="card box">
-          <h3>Who She Helps</h3>
+          <h3>What to Expect</h3>
           <ul>
-            <li>Children, adolescents, and adults :contentReference[oaicite:8]{index=8}</li>
-            <li>People seeking medication management for anxiety, depression, and mood-related concerns :contentReference[oaicite:9]{index=9}</li>
-            <li>ADHD, OCD, PTSD, and eating disorders (when clinically appropriate) :contentReference[oaicite:10]{index=10}</li>
-            <li>Families seeking collaborative care planning :contentReference[oaicite:11]{index=11}</li>
+            <li>A careful review of symptoms, history, and goals</li>
+            <li>Clear explanation of options and recommended next steps</li>
+            <li>A plan designed around effectiveness and minimizing side effects</li>
+            <li>Follow-ups to track progress and adjust as needed</li>
           </ul>
           <div class="notice">
-            <strong>Virtual appointments:</strong> All appointments are online. :contentReference[oaicite:12]{index=12}
+            If you are looking for a provider who is collaborative, thorough, and supportive—this page is designed to help you decide quickly and confidently.
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PRACTICE -->
-    <section id="practice">
-      <div class="section-title">
-        <h2>Practice Details</h2>
-        <p>How appointments work, what to expect, and next steps.</p>
-      </div>
-
-      <div class="grid3">
-        <div class="card box">
-          <h3>Specialties</h3>
-          <ul>
-            <li>Medication Management :contentReference[oaicite:13]{index=13}</li>
-            <li>Anxiety :contentReference[oaicite:14]{index=14}</li>
-            <li>Depression :contentReference[oaicite:15]{index=15}</li>
-          </ul>
-        </div>
-
-        <div class="card box">
-          <h3>Approach</h3>
-          <ul>
-            <li>Personalized medication planning focused on safety and effectiveness :contentReference[oaicite:16]{index=16}</li>
-            <li>Telemedicine access with supportive follow-up :contentReference[oaicite:17]{index=17}</li>
-            <li>Collaborative care: you’re involved in the plan :contentReference[oaicite:18]{index=18}</li>
-          </ul>
-        </div>
-
-        <div class="card box">
-          <h3>Location</h3>
-          <p>25 Market St Ste 14<br/>Swansea, MA 02777 :contentReference[oaicite:19]{index=19}</p>
-          <p style="margin-top:10px;"><strong>Phone:</strong> (508) 538-3748 :contentReference[oaicite:20]{index=20}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- REVIEWS MEGA SECTION -->
+    <!-- REVIEWS -->
     <section id="reviews" aria-label="Reviews">
       <div class="section-title">
-        <h2>Patient Reviews & Feedback</h2>
-        <p>What people often look for in a psychiatric provider—and what reviewers highlight.</p>
+        <h2>Patient Reviews</h2>
+        <p>What reviewers most often praise (based on the testimonials below).</p>
       </div>
 
       <div class="reviews-hero">
         <div class="reviews-top">
           <div class="rating-big">
-            <div class="score">4.5 / 5</div>
-            <div class="stars">★★★★★</div>
-            <div class="meta">Based on 23 reviews (Healthgrades) :contentReference[oaicite:21]{index=21}</div>
+            <div class="score">Reviews Highlight</div>
+            <div class="meta">Below are approved, anonymized testimonials.</div>
           </div>
 
-          <div class="highlights" aria-label="Highlights">
-            <span class="chip">Explains Conditions Well :contentReference[oaicite:22]{index=22}</span>
-            <span class="chip">Low Wait Times :contentReference[oaicite:23]{index=23}</span>
-            <span class="chip">Friendly Staff :contentReference[oaicite:24]{index=24}</span>
-            <span class="chip">Easy Scheduling :contentReference[oaicite:25]{index=25}</span>
-            <span class="chip">Telehealth Available :contentReference[oaicite:26]{index=26}</span>
+          <div class="highlights" aria-label="Most common praise chips">
+            <span class="chip">Empathetic & nonjudgmental</span>
+            <span class="chip">Listens deeply</span>
+            <span class="chip">Thorough answers</span>
+            <span class="chip">Collaborative care</span>
+            <span class="chip">Supports medication goals</span>
+            <span class="chip">Effective guidance</span>
           </div>
         </div>
 
         <div class="notice" style="margin-top:12px;">
-          Full reviews are hosted on Healthgrades. This site summarizes themes and can display approved testimonials you provide.
-          <a class="link" href="https://www.healthgrades.com/providers/lisa-anderson-tudkjfr797" target="_blank" rel="noopener">View Lisa’s Healthgrades profile</a>.
+          Looking for a psychiatrist or psychiatric prescriber? These are the qualities reviewers repeatedly mention:
+          feeling heard, having a clear plan, and being supported through difficult periods—without judgment.
         </div>
       </div>
 
-      <div class="grid2" style="margin-top:14px;">
-        <div class="card box">
-          <h3>Why people choose her (themes from reviews)</h3>
-          <ul>
-            <li>Professional, caring, and empathetic support (common theme) :contentReference[oaicite:27]{index=27}</li>
-            <li>Patients describe feeling heard and not judged :contentReference[oaicite:28]{index=28}</li>
-            <li>Thorough answers and collaborative decision-making :contentReference[oaicite:29]{index=29}</li>
-          </ul>
-        </div>
+      <div class="section-title" style="margin-top:18px;">
+        <h2>Most Common Praise Summary</h2>
+        <p>Directly derived from the testimonials you provided.</p>
+      </div>
 
-        <div class="card box">
-          <h3>Rating breakdown</h3>
-          <ul>
-            <li>5-star: 87% :contentReference[oaicite:30]{index=30}</li>
-            <li>1-star: 13% :contentReference[oaicite:31]{index=31}</li>
-            <li>Written reviews: 21 :contentReference[oaicite:32]{index=32}</li>
-          </ul>
-          <div class="notice">
-            Tip: reviewers often value clarity, responsiveness, and feeling supported—especially if they’ve had a difficult experience with care elsewhere.
-          </div>
+      <div class="summary-grid">
+        <div class="summary-item">
+          <h4>“I feel heard and understood.”</h4>
+          <p>Patients describe a safe, judgment-free environment where concerns are taken seriously and listened to carefully.</p>
+        </div>
+        <div class="summary-item">
+          <h4>Clear, thorough, thoughtful answers</h4>
+          <p>Reviewers emphasize that Lisa answers questions thoroughly, explains suggestions, and helps patients feel comfortable with each step.</p>
+        </div>
+        <div class="summary-item">
+          <h4>Collaborative care & patient goals</h4>
+          <p>Multiple testimonials highlight collaborative planning—including supporting goals around reducing or discontinuing medication when appropriate.</p>
+        </div>
+        <div class="summary-item">
+          <h4>Support during hard times</h4>
+          <p>Patients describe her guidance as making difficult periods more manageable, including supporting families and providing steady follow-up.</p>
         </div>
       </div>
 
-      <!-- Approved testimonials you paste in -->
       <div class="section-title" style="margin-top:18px;">
         <h2>Approved Testimonials (Anonymous)</h2>
-        <p>Paste your approved quotes in the boxes below.</p>
+        <p>Provided by you; shown exactly as written.</p>
       </div>
 
-      <div class="review-grid" id="testimonialGrid">
-        <!-- Replace these placeholder quotes with the exact approved quotes -->
+      <div class="review-grid">
         <div class="review-card">
           <div class="top">
             <div class="anon">Anonymous Patient</div>
-            <div class="date">Verified review</div>
+            <div class="meta2">
+              <span class="tag">Telehealth</span>
+              <span>Aug 7, 2025</span>
+            </div>
           </div>
           <p class="text">
-            [PASTE APPROVED QUOTE HERE]
+            I began seeing Lisa a few years ago for psychiatric care and, with her help, eventually reached a point where I no longer needed medication.
+            Recently, during a particularly challenging time, I chose to return to her care because of the incredibly positive experience I had before.
+            Lisa is not only highly professional and effective in her approach, but she is also deeply caring and empathetic. She creates a safe,
+            judgment-free space where I truly feel heard and understood. Every question I’ve had has been answered thoroughly and thoughtfully, and she
+            takes the time to ensure I’m comfortable with every step of my care. Her compassion and guidance have made a difficult period in my life much
+            more manageable. I’m extremely grateful for the support she’s provided and would recommend her to anyone seeking psychiatric care.
           </p>
         </div>
 
         <div class="review-card">
           <div class="top">
             <div class="anon">Anonymous Patient</div>
-            <div class="date">Verified review</div>
+            <div class="meta2">
+              <span class="tag">Telehealth</span>
+              <span>Aug 6, 2025</span>
+            </div>
           </div>
           <p class="text">
-            [PASTE APPROVED QUOTE HERE]
+            Lisa is extremely knowledgeable in her expertise, she is patient and understanding. Lisa listens to me and is genuinely there to help her
+            patients and make a difference.
           </p>
         </div>
 
         <div class="review-card">
           <div class="top">
             <div class="anon">Anonymous Patient</div>
-            <div class="date">Verified review</div>
+            <div class="meta2">
+              <span class="tag">Telehealth</span>
+              <span>Jul 17, 2025</span>
+            </div>
           </div>
           <p class="text">
-            [PASTE APPROVED QUOTE HERE]
+            I have been seeing Lisa for a short amount of time but within that time, she has helped me tremendously! She is not one of those psychiatrists
+            that tells you that you have to be on meds, she actually helps you wean off of them if she feels like you do not need them. I told her from the
+            start I want to be med free and she heard me, listened and helped me achieve my goal. I am super happy with the level of care she has provided!
+            She is kind, caring, efficient, and is very smart. She took wonderful care of me while I was under her treatment! She is very understanding if
+            you need to reschedule and will always provide letters or documentation if you need anything for work or medical reasons in a quick timeframe.
+            I highly recommend her if you or someone you know is looking for a psychiatrist! Thank you for all your help and everything you have done for me Lisa!
           </p>
         </div>
 
         <div class="review-card">
           <div class="top">
             <div class="anon">Anonymous Patient</div>
-            <div class="date">Verified review</div>
+            <div class="meta2">
+              <span class="tag">Telehealth</span>
+              <span>Nov 12, 2024</span>
+            </div>
           </div>
           <p class="text">
-            [PASTE APPROVED QUOTE HERE]
+            Lisa has been so helpful to me and my family. She is always ready to listen and is very understanding. She always takes the time to explain her
+            suggestions and helps you through the process. I would highly recommend anyone who needs the help to see her.
           </p>
         </div>
+      </div>
+
+      <div class="notice" style="margin-top:14px;">
+        Want to read more? You can also view public review profiles:
+        <a class="link" href="https://www.healthgrades.com/providers/lisa-anderson-tudkjfr797" target="_blank" rel="noopener">Healthgrades</a> •
+        <a class="link" href="https://www.psychologytoday.com/us/psychiatrists/lisa-m-anderson-swansea-ma/701895" target="_blank" rel="noopener">Psychology Today</a>
       </div>
     </section>
 
-    <!-- INSURANCE & FINANCES -->
+    <!-- INSURANCE -->
     <section id="insurance">
       <div class="section-title">
-        <h2>Insurance & Finances</h2>
-        <p>Coverage can vary by plan—verify with your insurer.</p>
+        <h2>Insurance Accepted</h2>
+        <p>Please verify coverage with your insurer.</p>
       </div>
 
-      <div class="grid2">
-        <div class="card box">
-          <h3>Insurance Accepted</h3>
-          <div class="insurance" aria-label="Insurance plans">
-            <span class="ins">Aetna</span>
-            <span class="ins">Anthem</span>
-            <span class="ins">Blue Cross</span>
-            <span class="ins">Blue Shield</span>
-            <span class="ins">BlueCross and BlueShield</span>
-            <span class="ins">Cigna and Evernorth</span>
-            <span class="ins">Harvard Pilgrim</span>
-            <span class="ins">Mass General Brigham Health Plan</span>
-            <span class="ins">Optum</span>
-            <span class="ins">Oscar Health</span>
-            <span class="ins">Tufts</span>
-            <span class="ins">UnitedHealthcare (UHC | UBH)</span>
-          </div>
-          <div class="notice">
-            The insurance list above reflects the public listing. :contentReference[oaicite:33]{index=33}
-          </div>
+      <div class="card box">
+        <p style="margin-bottom:10px;">Lisa accepts the following insurance plans (coverage can vary by policy):</p>
+        <div class="insurance" aria-label="Insurance plans">
+          <span class="ins">Aetna</span>
+          <span class="ins">Anthem</span>
+          <span class="ins">Blue Cross</span>
+          <span class="ins">Blue Shield</span>
+          <span class="ins">BlueCross and BlueShield</span>
+          <span class="ins">Cigna and Evernorth</span>
+          <span class="ins">Harvard Pilgrim</span>
+          <span class="ins">Mass General Brigham Health Plan</span>
+          <span class="ins">Optum</span>
+          <span class="ins">Oscar Health</span>
+          <span class="ins">Tufts</span>
+          <span class="ins">UnitedHealthcare (UHC | UBH)</span>
         </div>
-
-        <div class="card box">
-          <h3>Payment Methods</h3>
-          <ul>
-            <li>American Express</li>
-            <li>Cash</li>
-            <li>Check</li>
-            <li>Health Savings Account</li>
-            <li>Mastercard</li>
-            <li>Venmo</li>
-            <li>Visa</li>
-          </ul>
-          <div class="notice">
-            “We confirm eligibility, collect co-pays at time of the visit, and bill your insurance…” :contentReference[oaicite:34]{index=34}
-          </div>
+        <div class="notice">
+          Insurance participation can change. Call <a class="link" href="tel:+15085383748">(508) 538-3748</a> with questions.
         </div>
       </div>
     </section>
@@ -680,13 +688,12 @@
     <section>
       <div class="card box">
         <h3 style="margin-bottom:8px;">Ready to take the first step?</h3>
-        <p style="margin-bottom:14px;">
-          Book securely online through Tebra or call with questions. Accepting new patients; all appointments are virtual. :contentReference[oaicite:35]{index=35}
+        <p style="margin-bottom:14px; color:var(--muted); line-height:1.7;">
+          Book securely online through Tebra or call with questions. Accepting new patients; all appointments are virtual.
         </p>
         <div class="cta-row">
           <a class="btn primary" href="https://www.tebra.com/care/provider/lisa-anderson-pmhnp-1558822296" target="_blank" rel="noopener">Schedule Securely Online</a>
           <a class="btn" href="tel:+15085383748">Call: (508) 538-3748</a>
-          <a class="btn" href="https://www.psychologytoday.com/us/psychiatrists/lisa-m-anderson-swansea-ma/701895" target="_blank" rel="noopener">View Psychology Today Profile</a>
         </div>
       </div>
     </section>
