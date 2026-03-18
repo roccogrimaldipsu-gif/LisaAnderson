@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lisa Anderson, MSN, PMHNP-BC | Psychiatric Telehealth</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --sage: #7d9b8a;
+    --sage-light: #a8c0b0;
+    --sage-pale: #e8f0eb;
+    --cream: #f9f6f0;
+    --warm-white: #fdfcf8;
+    --charcoal: #2c2c2c;
+    --mid: #5a5a5a;
+    --light-text: #8a8a8a;
+    --gold: #b8965a;
+    --gold-light: #d4b07a;
+    --border: #e0dbd2;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(253, 252, 248, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-logo span {
+    color: var(--sage);
+    font-style: italic;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--mid);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--sage); }
+
+  .nav-cta {
+    background: var(--sage);
+    color: white !important;
+    padding: 0.55rem 1.4rem;
+    border-radius: 2px;
+    font-weight: 500 !important;
+  }
+
+  .nav-cta:hover { background: var(--sage-light); color: white !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding-top: 5rem;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    padding: 5rem 4rem 5rem 6rem;
+    position: relative;
+  }
+
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(125,155,138,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--sage);
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--sage);
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+    color: var(--mid);
+    line-height: 1.8;
+    max-width: 42ch;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--sage);
+    color: white;
+    padding: 0.85rem 2rem;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    border-radius: 2px;
+    transition: all 0.25s;
+  }
+
+  .btn-primary:hover {
+    background: #6a8877;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(125,155,138,0.3);
+  }
+
+  .btn-outline {
+    display: inline-block;
+    border: 1px solid var(--border);
+    color: var(--mid);
+    padding: 0.85rem 2rem;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    border-radius: 2px;
+    transition: all 0.25s;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--sage);
+    color: var(--sage);
+  }
+
+  .hero-right {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--sage-pale);
+    overflow: hidden;
+  }
+
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 30% 70%, rgba(125,155,138,0.2) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(184,150,90,0.1) 0%, transparent 50%);
+  }
+
+  .hero-photo-frame {
+    position: relative;
+    width: 360px;
+    height: 440px;
+    z-index: 2;
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  }
+
+  .hero-photo-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--sage-light) 0%, var(--sage) 100%);
+    border-radius: 3px;
+    transform: rotate(3deg);
+    opacity: 0.4;
+  }
+
+  .hero-photo-placeholder {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, #c5d8cc 0%, #8fb09a 100%);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-photo-placeholder::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 220px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50% 50% 0 0;
+  }
+
+  .photo-initials {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: white;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.1em;
+  }
+
+  .photo-note {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.75);
+    position: relative;
+    z-index: 1;
+    margin-top: 0.5rem;
+  }
+
+  .hero-badge {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    background: white;
+    border-radius: 3px;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    z-index: 3;
+    min-width: 160px;
+  }
+
+  .badge-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--sage);
+    line-height: 1;
+  }
+
+  .badge-label {
+    font-size: 0.72rem;
+    color: var(--light-text);
+    letter-spacing: 0.05em;
+    margin-top: 0.2rem;
+  }
+
+  /* MARQUEE */
+  .marquee-bar {
+    background: var(--charcoal);
+    color: var(--sage-light);
+    padding: 0.9rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .marquee-inner {
+    display: inline-block;
+    animation: marquee 25s linear infinite;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .marquee-inner span { margin: 0 3rem; color: var(--gold); }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 6rem; }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--sage);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ABOUT */
+  .about {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+    color: var(--mid);
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+  }
+
+  .credentials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .credential-card {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 1.2rem;
+    border-radius: 3px;
+    border-top: 2px solid var(--sage);
+  }
+
+  .cred-title {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-text);
+    margin-bottom: 0.3rem;
+  }
+
+  .cred-body {
+    font-size: 0.85rem;
+    color: var(--charcoal);
+    font-weight: 400;
+  }
+
+  /* SERVICES */
+  .services {
+    background: var(--warm-white);
+  }
+
+  .services-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    align-items: end;
+  }
+
+  .services-intro {
+    font-size: 0.95rem;
+    color: var(--mid);
+    line-height: 1.8;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 3px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--sage);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+
+  .service-card:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+    transform: translateY(-2px);
+  }
+
+  .service-card:hover::after { transform: scaleX(1); }
+
+  .service-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1.2rem;
+    color: var(--sage);
+  }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 0.6rem;
+  }
+
+  .service-desc {
+    font-size: 0.85rem;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+
+  /* TELEHEALTH PROCESS */
+  .process {
+    background: var(--charcoal);
+    color: white;
+  }
+
+  .process .section-label { color: var(--sage-light); }
+  .process .section-label::before { background: var(--sage-light); }
+  .process .section-title { color: white; }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    position: relative;
+  }
+
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 1.8rem;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .step {
+    text-align: center;
+    position: relative;
+  }
+
+  .step-num {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: rgba(125,155,138,0.2);
+    border: 1px solid rgba(125,155,138,0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--sage-light);
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 0.6rem;
+  }
+
+  .step-desc {
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+  }
+
+  /* CONDITIONS */
+  .conditions {
+    background: var(--sage-pale);
+  }
+
+  .conditions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2.5rem;
+  }
+
+  .condition-tag {
+    background: white;
+    border: 1px solid var(--sage-light);
+    color: var(--charcoal);
+    padding: 0.5rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 400;
+    transition: all 0.2s;
+  }
+
+  .condition-tag:hover {
+    background: var(--sage);
+    border-color: var(--sage);
+    color: white;
+  }
+
+  /* PROFILES */
+  .profiles {
+    background: var(--warm-white);
+  }
+
+  .profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .profile-card {
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    background: white;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .profile-card:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+    border-color: var(--sage-light);
+  }
+
+  .profile-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--sage-pale);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .profile-icon svg { color: var(--sage); }
+
+  .profile-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 0.3rem;
+  }
+
+  .profile-source {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.5rem;
+  }
+
+  .profile-desc {
+    font-size: 0.83rem;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+
+  .profile-arrow {
+    margin-left: auto;
+    color: var(--light-text);
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    transition: transform 0.2s;
+  }
+
+  .profile-card:hover .profile-arrow {
+    transform: translateX(3px);
+    color: var(--sage);
+  }
+
+  /* CONTACT */
+  .contact {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-info p {
+    font-size: 0.95rem;
+    color: var(--mid);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--charcoal);
+  }
+
+  .contact-item svg {
+    color: var(--sage);
+    flex-shrink: 0;
+  }
+
+  .contact-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 2.5rem;
+  }
+
+  .contact-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-card-sub {
+    font-size: 0.85rem;
+    color: var(--mid);
+    margin-bottom: 2rem;
+  }
+
+  .quick-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .quick-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    text-decoration: none;
+    color: var(--charcoal);
+    font-size: 0.88rem;
+    font-weight: 400;
+    transition: all 0.2s;
+  }
+
+  .quick-link:hover {
+    border-color: var(--sage);
+    background: var(--sage-pale);
+    color: var(--sage);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.55);
+    padding: 3rem 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: white;
+  }
+
+  .footer-brand span { color: var(--sage-light); font-style: italic; }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.45);
+    font-size: 0.8rem;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--sage-light); }
+
+  .footer-copy {
+    font-size: 0.78rem;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up {
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+  }
+
+  .fade-up:nth-child(1) { animation-delay: 0.1s; }
+  .fade-up:nth-child(2) { animation-delay: 0.25s; }
+  .fade-up:nth-child(3) { animation-delay: 0.4s; }
+  .fade-up:nth-child(4) { animation-delay: 0.55s; }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 7rem 2rem 3rem; }
+    .hero-right { height: 400px; }
+    section { padding: 4rem 2rem; }
+    .about, .contact { grid-template-columns: 1fr; gap: 3rem; }
+    .services-header { grid-template-columns: 1fr; gap: 1rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .steps::before { display: none; }
+    .profiles-grid { grid-template-columns: 1fr; }
+    footer { padding: 2rem; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Lisa Anderson <span>PMHNP-BC</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#conditions">Conditions</a></li>
+    <li><a href="#profiles">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Book Appointment</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow fade-up">Psychiatric Telehealth · Massachusetts</div>
+    <h1 class="hero-title fade-up">
+      Compassionate<br>
+      <em>Mental Health</em><br>
+      Care, Delivered
+    </h1>
+    <div class="hero-subtitle fade-up">Lisa Anderson, MSN, PMHNP-BC</div>
+    <p class="hero-desc fade-up">
+      Board-certified Psychiatric Mental Health Nurse Practitioner offering expert medication evaluation and management through secure telehealth — serving adolescents and adults across Massachusetts.
+    </p>
+    <div class="hero-actions fade-up">
+      <a href="https://www.tebra.com/care/provider/lisa-anderson-pmhnp-1558822296" target="_blank" class="btn-primary">Schedule an Appointment</a>
+      <a href="#about" class="btn-outline">Learn More</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-frame">
+      <div class="hero-photo-bg"></div>
+      <img src="data:image/jpeg;base64,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" alt="Lisa Anderson, PMHNP-BC" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:3px;position:relative;z-index:1;" />
+      </div>
+      <div class="hero-badge">
+        <div class="badge-number">30+</div>
+        <div class="badge-label">Years of Nursing<br>Experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-inner">
+    Telehealth Psychiatry&nbsp; <span>·</span> &nbsp;Medication Management&nbsp; <span>·</span> &nbsp;ADHD&nbsp; <span>·</span> &nbsp;Depression&nbsp; <span>·</span> &nbsp;Anxiety&nbsp; <span>·</span> &nbsp;PTSD&nbsp; <span>·</span> &nbsp;Mood Disorders&nbsp; <span>·</span> &nbsp;OCD&nbsp; <span>·</span> &nbsp;Eating Disorders&nbsp; <span>·</span> &nbsp;Adolescents & Adults&nbsp; <span>·</span> &nbsp;Massachusetts Licensed&nbsp; <span>·</span> &nbsp;Telehealth Psychiatry&nbsp; <span>·</span> &nbsp;Medication Management&nbsp; <span>·</span> &nbsp;ADHD&nbsp; <span>·</span> &nbsp;Depression&nbsp; <span>·</span> &nbsp;Anxiety&nbsp; <span>·</span> &nbsp;PTSD&nbsp; <span>·</span> &nbsp;Mood Disorders&nbsp; <span>·</span> &nbsp;OCD&nbsp; <span>·</span> &nbsp;Eating Disorders&nbsp; <span>·</span> &nbsp;Adolescents & Adults&nbsp; <span>·</span> &nbsp;Massachusetts Licensed&nbsp; <span>·</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-text">
+    <div class="section-label">About</div>
+    <h2 class="section-title">Experienced, Compassionate Psychiatric Care</h2>
+    <p>Lisa Anderson earned her Bachelor's degree in Nursing from Indiana University of Pennsylvania, followed by a Master's in Nursing Administration from LaRoche College in Pittsburgh, PA. She then completed an additional Master's program earning her license as a Psychiatric Mental Health Nurse Practitioner (PMHNP) at Regis College in Weston, MA.</p>
+    <p>With over 30 years of extensive nursing experience — including a decade in public health school nursing — Lisa brings a uniquely broad perspective to psychiatric care. Her background spans inpatient psychiatric hospitals, adolescent and adult inpatient facilities, and community healthcare settings.</p>
+    <p>Her practice prioritizes alleviating symptoms, strengthening coping mechanisms, and guiding individuals toward stability and fulfillment.</p>
+    <div class="credentials-grid">
+      <div class="credential-card">
+        <div class="cred-title">Education</div>
+        <div class="cred-body">BSN, Indiana University of PA<br>MSN, LaRoche College<br>PMHNP, Regis College</div>
+      </div>
+      <div class="credential-card">
+        <div class="cred-title">Certification</div>
+        <div class="cred-body">Board-Certified PMHNP<br>Massachusetts Licensed<br>Telehealth Provider</div>
+      </div>
+      <div class="credential-card">
+        <div class="cred-title">Experience</div>
+        <div class="cred-body">30+ years nursing<br>10 years school nursing<br>Inpatient & community</div>
+      </div>
+      <div class="credential-card">
+        <div class="cred-title">Populations</div>
+        <div class="cred-body">Adolescents<br>Adults</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="section-label">Contact</div>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;margin-bottom:1.5rem;">Get In Touch</h3>
+    <div class="contact-details">
+      <div class="contact-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        <a href="tel:774-260-6861" style="color:var(--charcoal);text-decoration:none;">774-260-6861</a>
+      </div>
+      <div class="contact-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>25 Market St. Ste. 14, Swansea, MA 02777</span>
+      </div>
+      <div class="contact-item" style="margin-top:0.5rem;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg>
+        <span>Telehealth appointments available</span>
+      </div>
+    </div>
+    <div style="margin-top:2rem;">
+      <a href="https://www.tebra.com/care/provider/lisa-anderson-pmhnp-1558822296" target="_blank" class="btn-primary">Book Online via Tebra</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-label">Services</div>
+      <h2 class="section-title">What Lisa Offers</h2>
+    </div>
+    <p class="services-intro">Lisa provides thorough psychiatric evaluations and personalized medication management — entirely via telehealth, from the comfort of your home.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      <div class="service-name">Initial Evaluation</div>
+      <p class="service-desc">A comprehensive assessment of your mental health history, symptoms, medical background, and previous treatments to form a clear clinical picture.</p>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+      <div class="service-name">Medication Management</div>
+      <p class="service-desc">Discussion of medication options, ongoing monitoring, dosage adjustments, and education about what to expect throughout your treatment journey.</p>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+      <div class="service-name">Symptom Assessment</div>
+      <p class="service-desc">Detailed review of symptom severity, duration, and patterns to determine the appropriate level of care and best-fit treatment approach.</p>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+      <div class="service-name">Collaborative Planning</div>
+      <p class="service-desc">You and Lisa work together to create a personalized treatment plan — which may include medication, lifestyle changes, and coordinated therapy referrals.</p>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg>
+      <div class="service-name">Telehealth Visits</div>
+      <p class="service-desc">All appointments are conducted via secure video — convenient, private, and accessible from anywhere in Massachusetts.</p>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+      <div class="service-name">Patient Education</div>
+      <p class="service-desc">Lisa ensures you understand your diagnosis, how medications work, what side effects to watch for, and when follow-up is needed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="section-label">How It Works</div>
+  <h2 class="section-title">Your Telehealth Journey</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Book Online</div>
+      <p class="step-desc">Schedule your initial evaluation through Tebra or by calling the office at 774-260-6861.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Initial Evaluation</div>
+      <p class="step-desc">A thorough review of your symptoms, history, and goals via a secure video appointment.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Treatment Plan</div>
+      <p class="step-desc">Collaboratively develop a personalized plan — medication, referrals, or lifestyle guidance.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">Ongoing Support</div>
+      <p class="step-desc">Regular follow-up appointments to monitor progress and adjust your plan as you grow.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONDITIONS -->
+<section class="conditions" id="conditions">
+  <div class="section-label">Conditions Treated</div>
+  <h2 class="section-title">Areas of Focus</h2>
+  <p style="font-size:0.95rem;color:var(--mid);max-width:60ch;margin-top:0.5rem;">Lisa offers medication consultation and management across a range of psychiatric conditions for both adolescents and adults.</p>
+  <div class="conditions-grid">
+    <span class="condition-tag">ADHD</span>
+    <span class="condition-tag">Depression</span>
+    <span class="condition-tag">Anxiety</span>
+    <span class="condition-tag">Mood Disorders</span>
+    <span class="condition-tag">PTSD</span>
+    <span class="condition-tag">OCD</span>
+    <span class="condition-tag">Eating Disorders</span>
+    <span class="condition-tag">Insomnia</span>
+    <span class="condition-tag">Bipolar Disorder</span>
+    <span class="condition-tag">Trauma</span>
+    <span class="condition-tag">Adolescent Mental Health</span>
+    <span class="condition-tag">Adult Psychiatry</span>
+  </div>
+</section>
+
+<!-- PROFILES -->
+<section class="profiles" id="profiles">
+  <div class="section-label">Verified Profiles</div>
+  <h2 class="section-title">Find Lisa Across Platforms</h2>
+  <p style="font-size:0.95rem;color:var(--mid);max-width:55ch;margin-top:0.5rem;">View patient reviews, ratings, and complete profile information on these trusted healthcare platforms.</p>
+  <div class="profiles-grid">
+    <a href="https://www.healthgrades.com/providers/lisa-anderson-tudkjfr797" target="_blank" class="profile-card">
+      <div class="profile-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      </div>
+      <div>
+        <div class="profile-source">Healthgrades</div>
+        <div class="profile-name">Lisa Anderson, PMHNP</div>
+        <p class="profile-desc">Verified ratings, patient reviews, and insurance information on Healthgrades.</p>
+      </div>
+      <svg class="profile-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a href="https://www.psychologytoday.com/us/psychiatrists/lisa-m-anderson-swansea-ma/701895" target="_blank" class="profile-card">
+      <div class="profile-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      </div>
+      <div>
+        <div class="profile-source">Psychology Today</div>
+        <div class="profile-name">Lisa M. Anderson, Swansea MA</div>
+        <p class="profile-desc">Full therapist profile on Psychology Today, including specialties, approach, and contact info.</p>
+      </div>
+      <svg class="profile-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a href="https://www.swanseapsychotherapy.com/medication" target="_blank" class="profile-card">
+      <div class="profile-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div>
+        <div class="profile-source">Swansea Center for Psychotherapy</div>
+        <div class="profile-name">Medication Evaluation Page</div>
+        <p class="profile-desc">Learn more about medication management services offered at Swansea Center for Psychotherapy.</p>
+      </div>
+      <svg class="profile-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a href="https://www.tebra.com/care/provider/lisa-anderson-pmhnp-1558822296" target="_blank" class="profile-card">
+      <div class="profile-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <div>
+        <div class="profile-source">Tebra (Kareo)</div>
+        <div class="profile-name">Book with Lisa Anderson, PMHNP</div>
+        <p class="profile-desc">Schedule an appointment directly through Tebra — the easiest way to book your visit.</p>
+      </div>
+      <svg class="profile-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-info">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Ready to Take the First Step?</h2>
+    <p>Lisa is currently accepting new patients for telehealth medication evaluations and management. Reach out by phone or book directly online.</p>
+    <div class="contact-details">
+      <div class="contact-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        <a href="tel:774-260-6861" style="color:var(--charcoal);text-decoration:none;font-size:1.05rem;">774-260-6861</a>
+      </div>
+      <div class="contact-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>25 Market St. Ste. 14, Swansea, MA 02777</span>
+      </div>
+      <div class="contact-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg>
+        <span>Telehealth · Massachusetts</span>
+      </div>
+    </div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-card-title">Book an Appointment</div>
+    <div class="contact-card-sub">Choose the most convenient way to connect with Lisa.</div>
+    <div class="quick-links">
+      <a href="https://www.tebra.com/care/provider/lisa-anderson-pmhnp-1558822296" target="_blank" class="quick-link">
+        <span>📅 &nbsp;Schedule via Tebra</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </a>
+      <a href="https://www.healthgrades.com/providers/lisa-anderson-tudkjfr797" target="_blank" class="quick-link">
+        <span>⭐ &nbsp;View Healthgrades Profile</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </a>
+      <a href="https://www.psychologytoday.com/us/psychiatrists/lisa-m-anderson-swansea-ma/701895" target="_blank" class="quick-link">
+        <span>🧠 &nbsp;Psychology Today Profile</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </a>
+      <a href="https://www.swanseapsychotherapy.com/medication" target="_blank" class="quick-link">
+        <span>🏠 &nbsp;Swansea Psychotherapy Center</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </a>
+      <a href="tel:774-260-6861" class="quick-link">
+        <span>📞 &nbsp;Call 774-260-6861</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Lisa Anderson <span>PMHNP-BC</span></div>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#conditions">Conditions</a></li>
+    <li><a href="#profiles">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="footer-copy">
+    © 2025 Lisa Anderson, MSN, PMHNP-BC &nbsp;·&nbsp; Swansea, MA &nbsp;·&nbsp; Psychiatric Telehealth Services
+  </div>
+</footer>
+
+</body>
+</html>
